@@ -3,7 +3,7 @@ from openai import OpenAI
 import os
 
 app = Flask(__name__)
-client = OpenAI(api_key)
+client = OpenAI(api_key=os.getenv("API_KEY"))
 # 🔑 API-ключ берём из переменной окружения (лучше задать через GitHub Secrets → Codespaces)
 
 @app.route("/analyze", methods=["POST"])
